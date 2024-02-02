@@ -1,0 +1,6 @@
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+docker rmi -f $(docker images -q)
+
+docker run -d -p 5000:5000 saru99034/back:latest
+docker run -d -p 8080:80 -e WS_BACK_URL=http://localhost:5000 saru99034/front:latest
