@@ -6,10 +6,12 @@ services:
       - "8080:80"
     environment:
       - environment=production
+    volumes:
+      - ./data:/app/data  # Add volume mount for data persistence
 
   frontend-service:
     image: frontend-image
     ports:
-      - "8000:80"  
+      - "8000:80"
     environment:
       - WS_BACK_URL=http://my-service:80
