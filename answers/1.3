@@ -1,0 +1,16 @@
+docker build -t appback .
+docker run appback 
+
+
+# Utilisez une image Python de Docker Hub en tant qu'image de base
+FROM python:3.8
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install -r requirements.txt
+
+COPY . .
+
+CMD ["python3","-m","flask","run","--host=0.0.0.0"]
