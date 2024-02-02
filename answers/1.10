@@ -1,0 +1,2 @@
+docker exec -it newname /bin/sh
+docker run -it saru99034/newrepo:latest /bin/sh
