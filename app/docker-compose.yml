@@ -2,3 +2,5 @@ version: '3'
 services:
   my-service:
     image: my-image
+    ports:
+      - "8080:80" 
